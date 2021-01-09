@@ -11,7 +11,7 @@ chmod 666 /var/log/bolo/sensors/logs
 
 sed -i '/read_sensors/d' /etc/rc.local
 sed -i '$d' /etc/rc.local
-printf "python /opt/bolo/sensors/read_sensors.py > /var/log/bolo/sensors/logs 2>&1\nexit 0\n" >> /etc/rc.local
+printf "python /opt/bolo/sensors/read_sensors.py > /var/log/bolo/sensors/logs 2>&1 &\nexit 0\n" >> /etc/rc.local
 
 
 echo "Installed succesfully"
